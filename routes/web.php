@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/pages/index', function () {
+return view('pages.index');
+});
+
+
+Route::get('/flyers/create', function () {
+    return view('flyers.create');
+    });
+
+//Route::get('/flyers/create', 'FlyersController@create');
+    
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
