@@ -21,12 +21,8 @@ Route::get('/pages/index', function () {
 return view('pages.index');
 });
 
-
-Route::get('/flyers/create', function () {
-    return view('flyers.create');
-    });
-
-//Route::get('/flyers/create', 'FlyersController@create');
+Route::get('/flyers/create', 'FlyersController@create');
+Route::post('/flyers', 'FlyersController@store');
     
 
 Auth::routes();

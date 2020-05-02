@@ -10880,7 +10880,7 @@ a.text-dark:focus {
   }
 }
 
-.body {
-  padding-top: 70px;
+.form-control {
+  height: 38px;
 }
 

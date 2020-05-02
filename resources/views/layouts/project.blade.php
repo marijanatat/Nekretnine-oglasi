@@ -36,5 +36,7 @@
         @yield('content')
     </div>
     
+    {{-- turbo links --}}
+    <script src="http://unpkg.com/turbolinks"></script>
 </body>
 </html>

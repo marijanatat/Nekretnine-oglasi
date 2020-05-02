@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Flyer;
 use Illuminate\Http\Request;
+use App\Http\Requests\FlyerRequest;
+use App\Helpers;
+
 
 class FlyersController extends Controller
 {
@@ -11,10 +15,13 @@ class FlyersController extends Controller
         return view('flyers.create');
     }
 
-    public function store(Flyer $flyer)
+    public function store(FlyerRequest $request)
     {
-        request()->validate([]);
-
-        return back;
+        //validacija preko request
+        $flyer=Flyer::create($request->all());
+    
+ // flashing message
+      flash('Flyers successfully created');
+        return redirect()->back();
     }
 }
