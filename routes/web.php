@@ -18,11 +18,15 @@ Route::get('/', function () {
 });
 
 Route::get('/pages/index', function () {
+    // Session::flash('success', 'Dobro dosli');
+    //Session::flash('flash_message', 'You just made a cool edit to your profile.');
+	//Session::flash('flash_type', 'alert-info');
 return view('pages.index');
 });
 
 Route::get('/flyers/create', 'FlyersController@create');
 Route::post('/flyers', 'FlyersController@store');
+Route::get('/flyers/{zip}/{street}', 'FlyersController@show');
     
 
 Auth::routes();

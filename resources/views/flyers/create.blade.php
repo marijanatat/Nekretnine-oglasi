@@ -3,6 +3,7 @@
 
 @section('content')
 
+
 <div class="row">
 <div class="jumbotron">
     <div class="container">       
@@ -22,6 +23,7 @@
         </ul>
       </div>
       @endif
+      
 
 
     

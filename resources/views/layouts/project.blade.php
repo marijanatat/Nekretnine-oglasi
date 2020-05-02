@@ -6,8 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flayer</title>
     <link href="/css/app.css" rel="stylesheet">
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+
+    {{-- <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css"> --}}
 </head>
 <body>
+
+     {{-- @include('flash')  --}}
+
+      
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Flyers</a>
@@ -32,11 +41,18 @@
           </form>
         </div>
       </nav>
+
+  
+
     <div class="container ">
         @yield('content')
     </div>
     
     {{-- turbo links --}}
     <script src="http://unpkg.com/turbolinks"></script>
+    <div>
+        @include('flash') 
+    </div> 
+  
 </body>
 </html>

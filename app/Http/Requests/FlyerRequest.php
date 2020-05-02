@@ -24,7 +24,7 @@ class FlyerRequest extends FormRequest
     public function rules()
     {
         return [
-            'street'=>'required',
+            'street'=>'required|min:5',
             'city'=>'required',
             'country'=>'required',
             'zip'=>'required',
