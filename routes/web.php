@@ -12,21 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/pages', 'PagesController@home');
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pages/index', function () {
-    // Session::flash('success', 'Dobro dosli');
-    //Session::flash('flash_message', 'You just made a cool edit to your profile.');
-	//Session::flash('flash_type', 'alert-info');
-return view('pages.index');
-});
 
-Route::get('/flyers/create', 'FlyersController@create');
-Route::post('/flyers', 'FlyersController@store');
-Route::get('/flyers/{zip}/{street}', 'FlyersController@show');
+Route::get('/flyers', 'FlyersController@getall');
+Route::get('/pages/index', 'FlyersController@index');
+
+Route::get('/flyers/create', 'FlyersController@create')->middleware('auth');
+Route::post('/flyers', 'FlyersController@store')->middleware('auth');
+Route::get('{zip}/{street}', 'FlyersController@show');
+//Route::get('/flyers/show', 'FlyersController@show');
+Route::post('{zip}/{street}/photos', 'FlyersController@addPhoto')->middleware('auth')->name('store_photo_path');
+    
     
 
 Auth::routes();

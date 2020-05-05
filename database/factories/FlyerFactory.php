@@ -10,9 +10,10 @@ $factory->define(Flyer::class, function (Faker $faker) {
         'street' => $faker->streetAddress,
         'city' => $faker->city,
         'zip' => $faker->postcode,
-        'state' => $faker->state,
-        'street' => $faker->streetAddress,
-        'price' => $faker->number_format(22000,500000),
+        'country' => $faker->country,
+      
+        'price' => $faker->numberBetween(10000, 5000000),
         'description' => $faker->paragraphs(3),
+        'user_id' => factory('App\User')->create()->id,
     ];
 });

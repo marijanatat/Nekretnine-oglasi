@@ -4,36 +4,27 @@
 @section('content')
 
 
-<div class="row">
 <div class="jumbotron">
     <div class="container">       
       <h1 class="display-3">Selling your home</h1>
       <hr>
+ 
+      <div class="clearfix">
+        <a class=" btn btn-primary btn-sm float-right" 
+         href="/pages/index" role="button" >Back to Homepage</a>
+      </div>
 
-     <form action="/flyers" method="POST" enctype="multipart/form-data" class="col-med-6">
+     <form action="/flyers" method="POST" enctype="multipart/form-data" >
       @csrf
        @include('flyers.form')
 
-      @if(count($errors) >0))
-      <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
-      </div>
-      @endif
-      
-
-
-    
-
+       @include('errors')
+ 
      </form>
-
-  
+ 
     </div>
   </div>
-</div>
+
 
 @endsection
 

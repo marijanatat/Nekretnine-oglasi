@@ -21,6 +21,7 @@ class CreateFlyersTable extends Migration
             $table->string('zip',10);
             $table->integer('price');
             $table->text('description');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             
             $table->timestamps();
         });
