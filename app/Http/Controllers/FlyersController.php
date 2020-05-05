@@ -110,4 +110,10 @@ class FlyersController extends Controller
     {
         return Photo::named($file->getClientOriginalName())->move($file);
     }
+    public function destroy($id)
+    {
+        $photo=Photo::findOrFail($id);
+        $photo->delete();
+        return back();
+    }
 }

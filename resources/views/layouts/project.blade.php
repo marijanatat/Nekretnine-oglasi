@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flayer</title>
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/libs.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('css/lity.css')}}" rel="stylesheet">
      <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.css" rel="stylesheet">
   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
@@ -14,9 +14,14 @@
     {{-- <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css"> --}}
 <script src="{{asset('js/app.js')}}" defer></script>
+ 
+{{-- <link href="dist/lity.css" rel="stylesheet"> --}}
+<script src="https://unpjg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="dist/lity.js"></script>
+
 </head>
 <body>
-
+  @include('flash')
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="/pages/index">Flyers</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

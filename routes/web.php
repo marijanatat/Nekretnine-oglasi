@@ -26,6 +26,7 @@ Route::post('/flyers', 'FlyersController@store')->middleware('auth');
 Route::get('{zip}/{street}', 'FlyersController@show');
 //Route::get('/flyers/show', 'FlyersController@show');
 Route::post('{zip}/{street}/photos', 'FlyersController@addPhoto')->middleware('auth')->name('store_photo_path');
+Route::delete('photos/{id}','FlyersController@destroy');
     
     
 

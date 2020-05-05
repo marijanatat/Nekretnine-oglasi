@@ -5,6 +5,8 @@
  */
 
 require('./bootstrap');
+require('./lity');
+// require('./sweetalert');
 
 window.Vue = require('vue');
 
